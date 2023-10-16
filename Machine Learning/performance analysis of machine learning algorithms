@@ -1,0 +1,72 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import preprocessing
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score,classification_report
+
+df = pd.read_csv('add-your-dataset.csv')
+df=df.drop(['drop-useless-columns'], axis=1)
+
+#preprocessing 
+
+from sklearn import preprocessing
+le = preprocessing.LabelEncoder()
+
+for i in df.columns:
+    df[i] = le.fit_transform(df[i])
+#X is the input, Y is the output
+X = df.['add-all-input-columns']
+y = df['add-output-column']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10)
+
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from xgboost import XGBClassifier
+from lightgbm import LGBMClassifier
+from sklearn.neural_network import MLPClassifier
+
+#a function for multiple algorithms
+models = [
+    LogisticRegression(),
+    DecisionTreeClassifier(),
+    RandomForestClassifier(),
+    SVC(),
+    KNeighborsClassifier(),
+    GaussianNB(),
+    XGBClassifier(),
+    LGBMClassifier(),
+    MLPClassifier()
+]
+# Iterate through models and evaluate their performance
+for model in models:
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+
+    # Calculate evaluation metrics
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    roc_auc = roc_auc_score(y_test, y_pred)
+    conf_matrix = confusion_matrix(y_test, y_pred)
+    classification_rep = classification_report(y_test, y_pred)
+
+    # Print or store the evaluation metrics for each model
+    print(f"Model: {model.__class__.__name__}")
+    print(f"Accuracy: {accuracy:.2f}")
+    print(f"Precision: {precision:.2f}")
+    print(f"Recall: {recall:.2f}")
+    print(f"F1 Score: {f1:.2f}")
+    print(f"ROC-AUC: {roc_auc:.2f}")
+    print("Confusion Matrix:")
+    print(conf_matrix)
+    print("Classification Report:")
+    print(classification_rep)
+    print("\n")
