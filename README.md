@@ -24,10 +24,10 @@ Unlock the potential of Python in the field of AI! Our Python sub-repository hou
 
 🚀 **Efficient Learning**: 
 - ModelFlow simplifies your learning journey by consolidating a wide range of AI domains into one cohesive platform. No more hunting through scattered repositories!
-<br/>
+
 💡 **Diverse Knowledge**:
 - ModelFlow offers a rich and diverse collection of projects, allowing you to explore various domains and broaden your understanding of AI concepts and applications.
-<br/>
+
 🌟 **Community Collaboration**:
 - Join a vibrant community of AI enthusiasts! Contribute your expertise, share insights, and collaborate on exciting projects, fostering growth and innovation.
 
