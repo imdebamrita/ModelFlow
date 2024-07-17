@@ -1,4 +1,4 @@
-##People Counting System with OpenCV, Python, and YOLO
+## People Counting System with OpenCV, Python, and YOLO
 
 This People Counting System uses OpenCV, Python, and the YOLO algorithm for real-time and precise counting of people entering and exiting designated areas. It features entrance and exit tracking, adaptability to various environments. This solution is ideal for applications like crowd monitoring, attendance tracking, and occupancy management.
 
